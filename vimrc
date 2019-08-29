@@ -61,7 +61,6 @@ filetype plugin indent on    " required
 
 
 
-
 let mapleader="," "leader character used when doing shorcuts
 set hidden "hide buffers instead of closing them
 
@@ -218,16 +217,20 @@ set statusline+=%*
 let g:ale_fixers = {
       \  'python': ['black'],
       \ 'vue': ['prettier'],
-      \ 'markdown': ['prettier']
+      \ 'markdown': ['prettier'],
+      \ 'javascript': ['prettier']
       \}
 let g:ale_linters = {
         \ 'python': ['mypy', 'flake8', 'pylint'],
-        \ 'markdown': ['proselint', 'writegood', 'alex', 'markdownlint']
+        \ 'markdown': ['proselint', 'writegood', 'alex', 'markdownlint'],
+        \ 'vue': ['eslint', 'vls', 'xo'],
+        \ 'javascript': ['eslint', 'tsserver', 'xo']
       \}
 " , 'pyls']
 let g:ale_fix_on_save = 1
 
 let g:ale_javascript_prettier_options = "--prose-wrap always"
+let g:ale_javascript_eslint_options = "--ext vue"
 
 nmap <silent> <Up> <Plug>(ale_previous_wrap)
 nmap <silent> <Down> <Plug>(ale_next_wrap)
