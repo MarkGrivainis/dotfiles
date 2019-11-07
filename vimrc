@@ -56,6 +56,8 @@ Plugin 'lervag/vimtex'
 
 Plugin 'posva/vim-vue'
 
+Plugin 'majutsushi/tagbar'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -192,6 +194,7 @@ autocmd BufReadPost *
 
 
 map <F3> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 let g:NERDDefaultAlign = 'left'
 
@@ -218,7 +221,8 @@ let g:ale_fixers = {
       \  'python': ['black'],
       \ 'vue': ['prettier'],
       \ 'markdown': ['prettier'],
-      \ 'javascript': ['prettier']
+      \ 'javascript': ['prettier'],
+      \ 'cpp': ['clang-format']
       \}
 let g:ale_linters = {
         \ 'python': ['mypy', 'flake8', 'pylint'],
