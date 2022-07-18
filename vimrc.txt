@@ -103,7 +103,6 @@ filetype plugin indent on
 if has('autocmd')
   "Expand tab in python files"
   autocmd filetype python set expandtab
-  autocmd filetype typescript set expandtab
 endif
 
 if &t_Co >= 256 || has("gui_running")
@@ -198,7 +197,6 @@ map <F3> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 let g:NERDDefaultAlign = 'left'
-let NERDSpaceDelims=1
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -224,15 +222,13 @@ let g:ale_fixers = {
       \ 'vue': ['prettier'],
       \ 'markdown': ['prettier'],
       \ 'javascript': ['prettier'],
-      \ 'cpp': ['clang-format'],
-      \ 'typescript': ['prettier', 'xo']
+      \ 'cpp': ['clang-format']
       \}
 let g:ale_linters = {
         \ 'python': ['mypy', 'flake8', 'pylint'],
         \ 'markdown': ['proselint', 'writegood', 'alex', 'markdownlint'],
         \ 'vue': ['eslint', 'vls', 'xo'],
-        \ 'javascript': ['eslint', 'tsserver', 'xo'],
-        \ 'typescript': ['eslint', 'tsserver', 'xo']
+        \ 'javascript': ['eslint', 'tsserver', 'xo']
       \}
 " , 'pyls']
 let g:ale_fix_on_save = 1
