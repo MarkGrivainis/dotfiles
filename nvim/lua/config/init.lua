@@ -1,27 +1,30 @@
-local g = vim.g
-
--- Disable some builtin vim plugins
-local disabled_built_ins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  -- "netrw",
-  -- "netrwPlugin",
-  -- "netrwSettings",
-  -- "netrwFileHandlers",
-  "matchit",
-  "matchparen",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
+return {
+  pde = {
+    ai = true,
+    angular = false,
+    cpp = false,
+    csharp = false,
+    docker = true,
+    elixir = false,
+    flutter = false,
+    go = false,
+    html = true,
+    java = false,
+    json = true,
+    julia = false,
+    jupyter = true,
+    lua = true,
+    python = true,
+    r = false,
+    react = true,
+    ruby = false,
+    rust = true,
+    solidity = false,
+    svelte = false,
+    tailwind = true,
+    terraform = false,
+    typescript = true,
+    vuejs = false,
+    yaml = true,
+  },
 }
-
-for _, plugin in pairs(disabled_built_ins) do
-  g["loaded_" .. plugin] = 1
-end
